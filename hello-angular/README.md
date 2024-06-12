@@ -1,27 +1,14 @@
-# HelloAngular
+# Exercices
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+## RxJS
 
-## Development server
+### Exercice 1
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Réécrire le composant `ClockComponent` et remplacer `setInterval` par un observable créé avec `interval` et transformé avec l'opérateur `map` 
 
-## Code scaffolding
+### Exercice 2
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Créer un nouveau composant `CountdownComponent` qui contient un bouton qui affiche `10` et qui va se décrémenter chaque seconde jusqu'à `0` quand on cliquera.
 
-## Build
+Au click de ce bouton démarrer un observable en appelant `.subscribe`, l'observable aura été créé au préalable avec `interval`, `map` et `take` (ou `takeWhile`).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
