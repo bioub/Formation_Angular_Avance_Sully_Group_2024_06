@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, mergeMap, switchMap } from 'rxjs/operators';
+import { map, mergeMap, pluck, switchMap } from 'rxjs/operators';
 
 import { User } from '../../shared/models/user';
 import { UserService } from '../user.service';

@@ -26,4 +26,8 @@
   Delay : <input type="number" [(ngModel)]="delay" />
 </div>
 
-<app-clock [delay]="delay" [format]="format"></app-clock>
+<button (click)="showClock = !showClock">On/off</button>
+<app-clock *ngIf="showClock" [delay]="delay" [format]="format"></app-clock>
+
+
+<app-countdown></app-countdown>
