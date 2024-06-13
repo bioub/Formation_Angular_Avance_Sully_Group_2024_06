@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription, interval, map, startWith, take } from 'rxjs';
+import { Observable, Subscription, forkJoin, interval, map, startWith, take } from 'rxjs';
 
 @Component({
   selector: 'app-countdown',

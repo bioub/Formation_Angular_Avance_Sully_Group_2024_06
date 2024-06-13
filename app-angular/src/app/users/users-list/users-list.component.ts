@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { User } from '../../shared/models/user';
@@ -14,7 +14,8 @@ import { UserService } from '../user.service';
 })
 export class UsersListComponent implements OnInit {
 
-  public users$: Observable<User[]>;
+  // public users$ = new Subject<User[]>();
+  users$: Observable<User[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +37,8 @@ export class UsersListComponent implements OnInit {
   }
 
   public refreshList() {
-    this.users$ = this.userService.getList$();
+    this.users$ = this.userService.getList$()
+    // this.userService.getList$().subscribe(this.users$);
   }
 
 }
