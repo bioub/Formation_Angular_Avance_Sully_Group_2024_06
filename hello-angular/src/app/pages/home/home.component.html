@@ -1,0 +1,33 @@
+<h1>Hello, {{ title }}</h1>
+
+
+<div>
+  Format : <input type="text" [value]="format" (input)="format = $any($event.target).value" />
+</div>
+
+<div>
+  Delay : <input type="number" [value]="delay" (input)="delay = $any($event.target).valueAsNumber" />
+</div>
+
+<div>
+  Format : <input type="text" [ngModel]="format" (ngModelChange)="format = $event" />
+</div>
+
+<div>
+  Delay : <input type="number" [ngModel]="delay" (ngModelChange)="delay = $event" />
+</div>
+
+<div>
+  Format : <input type="text" [(ngModel)]="format" required #input="ngModel" />
+  <span>{{input.errors}}</span>
+</div>
+
+<div>
+  Delay : <input type="number" [(ngModel)]="delay" />
+</div>
+
+<button (click)="showClock = !showClock">On/off</button>
+<app-clock *ngIf="showClock" [delay]="delay" [format]="format"></app-clock>
+
+
+<app-countdown></app-countdown>
