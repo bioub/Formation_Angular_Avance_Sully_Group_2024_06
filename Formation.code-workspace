@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "demos-redux"
+		},
+		{
+			"path": "app-angular-ngrx"
 		}
 	],
 	"settings": {}
