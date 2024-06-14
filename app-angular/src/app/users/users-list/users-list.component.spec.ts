@@ -3,6 +3,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { UsersListComponent } from './users-list.component';
+import { UserService } from '../user.service';
+import { of } from 'rxjs';
+import { EventEmitter } from '@angular/core';
 
 describe('UsersListComponent', () => {
   let component: UsersListComponent;
@@ -24,6 +27,20 @@ describe('UsersListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [UsersListComponent],
+      providers: [
+        {
+          provide: UserService,
+          useValue: {
+            events: new EventEmitter<string>(),
+            getList$() {
+              return of([
+                { id: 1, name: 'Toto' },
+                { id: 2, name: 'Titi' },
+              ]);
+            }
+          }
+        }
+      ],
       imports: [RouterTestingModule.withRoutes([]), HttpClientTestingModule],
     }).compileComponents();
   });
@@ -36,5 +53,9 @@ describe('UsersListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display data from service (with fake service)', () => {
+    expect(fixture.nativeElement.textContent).toContain('Toto');
   });
 });

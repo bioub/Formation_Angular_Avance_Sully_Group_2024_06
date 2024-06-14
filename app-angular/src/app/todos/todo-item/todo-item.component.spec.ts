@@ -34,4 +34,11 @@ describe('TodoItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display todo', () => {
+    component.todo = 'ABC';
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.textContent).toContain('ABC');
+  });
 });
