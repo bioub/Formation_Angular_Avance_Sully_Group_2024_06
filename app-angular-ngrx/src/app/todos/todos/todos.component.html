@@ -1,2 +1,2 @@
-<app-todo-form (onAddTodo)="handleNewTodo($event)"></app-todo-form>
-<app-todos-list [todos]="todos"></app-todos-list>
+<app-todo-form [todo]="inputValue$ | async" (onEditTodo)="handleEditTodo($event)" (onAddTodo)="handleNewTodo($event)"></app-todo-form>
+<app-todos-list [todos]="todos$ | async"></app-todos-list>

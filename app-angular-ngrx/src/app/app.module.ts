@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,9 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { TodosModule } from './todos/todos.module';
 import { UsersModule } from './users/users.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { todosReducer } from './store/reducers';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent, HomeComponent, MenuComponent],
@@ -20,6 +23,10 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot({
+      todos: todosReducer,
+    }, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25/*, logOnly: !isDevMode()*/ }),
   ],
   providers: [],
   bootstrap: [AppComponent],
