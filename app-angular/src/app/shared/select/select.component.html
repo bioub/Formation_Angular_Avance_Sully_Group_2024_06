@@ -1,0 +1,7 @@
+<div class="selected" (click)="openMenu()"> {{ selected }} </div>
+
+<div class="menu" *ngIf="menuOpen">
+  <div *ngFor="let item of items" class="item" [class.active]="item === selected" (click)="selectItem(item)">
+    {{ item }}
+  </div>
+</div>
