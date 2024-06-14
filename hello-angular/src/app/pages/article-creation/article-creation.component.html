@@ -2,12 +2,15 @@
   Article Creation
 </h2>
 
-<form>
+<form [formGroup]="articleForm" (ngSubmit)="handleSubmit()">
   <div>
-    <input type="text" placeholder="Title" />
+    <input type="text" placeholder="Title" formControlName="title" />
+    <span *ngIf="articleForm.get('title')?.touched && articleForm.get('title')?.invalid">
+      ERREUR
+    </span>
   </div>
   <div>
-    <textarea placeholder="Body"></textarea>
+    <textarea placeholder="Body" formControlName="body"></textarea>
   </div>
   <div>
     <button>Submit</button>

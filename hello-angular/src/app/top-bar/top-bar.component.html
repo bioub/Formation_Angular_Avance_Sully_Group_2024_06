@@ -5,4 +5,4 @@
   <a routerLink="/articles/creation" routerLinkActive="active">Create Article</a>
 </nav>
 
-<button [disabled]="disableButton">Save Form</button>
+<button [disabled]="disableButton$ | async">Save Form</button>
