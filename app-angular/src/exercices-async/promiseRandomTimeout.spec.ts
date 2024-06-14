@@ -1,6 +1,6 @@
 import { promiseRandomTimeout } from "./promiseRandomTimeout"
 
-it('should call callback', async () => {
+it('should call callback (v3)', async () => {
 
   jasmine.clock().install();
 
@@ -11,6 +11,6 @@ it('should call callback', async () => {
 
   const val = await promise;
 
-  expect(val).toHaveBeenCalledOnceWith('ABC');
+  expect(val).toBe('ABC');
   jasmine.clock().uninstall();
 })

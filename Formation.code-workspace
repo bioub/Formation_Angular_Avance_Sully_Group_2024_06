@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "app-angular"
+		},
+		{
+			"path": "async-rxjs"
+		},
+		{
+			"path": "hello-angular"
+		}
+	],
+	"settings": {}
+}
