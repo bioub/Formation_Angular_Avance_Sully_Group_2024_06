@@ -23,6 +23,7 @@ describe('TodoFormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TodoFormComponent],
+      imports: [FormsModule]
     }).compileComponents();
   });
 

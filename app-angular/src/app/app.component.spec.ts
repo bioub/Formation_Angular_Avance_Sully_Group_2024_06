@@ -23,6 +23,8 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent, MenuComponent],
       imports: [RouterTestingModule.withRoutes([])],
+      // errorOnUnknownElements: true,
+      // errorOnUnknownProperties: true,
     }).compileComponents();
   });
 
