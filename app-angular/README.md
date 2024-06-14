@@ -14,3 +14,14 @@ Dans `src/app/todos/todo-item/todo-item.component.spec.ts` vérifier que quand o
 
 Dans `src/app/todos/todo-form/todo-form.component.spec.ts` vérifier que au submit du formulaire, l'output `onAddTodo` emet bien la valeur contenue dans la propriété `todo`.
 
+## Test de Composants avec Double
+
+Tester `UsersListComponent` en remplaçant dans le test le retour du serveur par : 
+
+```
+[
+  { id: 1, name: 'Toto' },
+  { id: 2, name: 'Titi' },
+]
+
+Vérifier ensuite que le composant affiche Toto.
